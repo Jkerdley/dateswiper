@@ -1,0 +1,61 @@
+@use '../../styles/variables' as *;
+
+.point {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6px;
+	height: 6px;
+	background: $primary-color;
+	border-radius: 50%;
+	cursor: pointer;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease;
+	z-index: 20;
+
+	&:hover,
+	&.active {
+		width: 56px;
+		height: 56px;
+		border: 1px solid $primary-color;
+		background: $light-bg;
+		z-index: 30;
+	}
+}
+
+.tooltip {
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	transform: translate(20px, -50%);
+	display: flex;
+	align-items: center;
+	background: $white;
+	padding: 8px 10px;
+	border-radius: 50px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	white-space: nowrap;
+	z-index: 40;
+
+	.tooltipIndex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background: $white;
+		border: 1px solid $primary-color;
+		font-family: $font-main;
+		font-weight: 700;
+		font-size: 14px;
+		margin-right: 8px;
+	}
+
+	.tooltipTitle {
+		font-family: $font-main;
+		font-weight: 700;
+		font-size: 20px;
+		color: $primary-color;
+	}
+}

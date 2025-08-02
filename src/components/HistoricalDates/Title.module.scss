@@ -1,0 +1,38 @@
+@use '../../styles/variables' as *;
+
+.titleContainer {
+	grid-area: title;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.gradientLine {
+	width: 5px;
+	height: 120px;
+	background: linear-gradient(180deg, $accent-start 0%, $accent-end 100%);
+	margin-right: 40px;
+}
+
+.title {
+	font-family: $font-main;
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 120%;
+	color: $primary-color;
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.titleContainer {
+		margin-bottom: 10px;
+	}
+
+	.gradientLine {
+		height: 80px;
+		margin-right: 20px;
+	}
+
+	.title {
+		font-size: 32px;
+	}
+}

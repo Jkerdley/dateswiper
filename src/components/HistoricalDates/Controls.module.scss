@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+
+.controls {
+	grid-area: controls;
+	display: flex;
+	gap: 20px;
+}
+
+.controlButton {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 1px solid $primary-color;
+	background: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background: $light-bg;
+		transform: scale(1.05);
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	svg {
+		width: 10px;
+		height: 14px;
+	}
+}
+
+.prevButton {
+	svg {
+		transform: rotate(180deg);
+	}
+}
+.nextButton {
+	svg {
+		transform: rotate(180deg);
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.controls {
+		justify-content: center;
+		margin-top: 20px;
+	}
+}

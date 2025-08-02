@@ -1,0 +1,18 @@
+@use '../../styles/variables' as *;
+
+.yearCounter {
+	font-family: $font-main;
+	font-weight: 700;
+	font-size: 200px;
+	line-height: 160px;
+	opacity: 0.9;
+	transition: color 0.3s ease;
+	text-align: center; // Центрируем текст
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.yearCounter {
+		font-size: 100px;
+		line-height: 80px;
+	}
+}

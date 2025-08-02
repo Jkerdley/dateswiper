@@ -1,0 +1,55 @@
+@use '../../styles/variables' as *;
+
+.crosshair {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+
+	.horizontal,
+	.vertical,
+	.leftLine,
+	.rightLine {
+		position: absolute;
+		background: $primary-color;
+	}
+
+	.horizontal {
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		transform: translateY(-50%);
+	}
+
+	.vertical {
+		top: 0;
+		left: 50%;
+		height: 100%;
+		width: 1px;
+		transform: translateX(-50%);
+	}
+
+	.leftLine {
+		top: 0;
+		left: 80px;
+		height: 100%;
+		width: 1px;
+	}
+
+	.rightLine {
+		top: 0;
+		right: 80px;
+		height: 100%;
+		width: 1px;
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.crosshair {
+		display: none;
+	}
+}

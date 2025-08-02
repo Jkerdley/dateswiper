@@ -1,0 +1,55 @@
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin circle($size) {
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+}
+
+@mixin gradient-text {
+	background: linear-gradient(90deg, $accent-start, $accent-end);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@mixin gradient-border($direction) {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: inherit;
+		border: 1px solid transparent;
+		background: linear-gradient($direction, $accent-start, $accent-end) border-box;
+		-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+		mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: destination-out;
+		mask-composite: exclude;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: $breakpoint-mobile) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile + 1) {
+		@content;
+	}
+}
