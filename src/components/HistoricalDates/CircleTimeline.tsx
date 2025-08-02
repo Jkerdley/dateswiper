@@ -20,12 +20,9 @@ export const CircleTimeline: React.FC<CircleTimelineProps> = ({
 	isMobile,
 }) => {
 	const circleRef = useRef<HTMLDivElement>(null);
+	const [rotation, setRotation] = useState<string | number>(0);
 	const radius = isMobile ? 160 : 265;
 	const [points, setPoints] = useState(() => calculatePointPositions(periods.length, radius));
-
-	useEffect(() => {
-		setPoints(calculatePointPositions(periods.length, radius));
-	}, [periods.length, radius]);
 
 	useEffect(() => {
 		if (circleRef.current) {
@@ -36,6 +33,9 @@ export const CircleTimeline: React.FC<CircleTimelineProps> = ({
 				duration: 1.5,
 				ease: 'power3.out',
 				transformOrigin: 'center',
+				onUpdate: function () {
+					setRotation(gsap.getProperty(this.targets()[0], 'rotation'));
+				},
 			});
 		}
 	}, [activeIndex, periods.length]);
@@ -59,6 +59,7 @@ export const CircleTimeline: React.FC<CircleTimelineProps> = ({
 						title={periods[index].title}
 						isActive={index === activeIndex}
 						onClick={() => onSelect(index)}
+						rotation={rotation}
 					/>
 				))}
 			</div>

@@ -2,6 +2,9 @@
 
 .controls {
 	grid-area: controls;
+	position: absolute;
+	left: 0;
+	bottom: -60px;
 	display: flex;
 	gap: 20px;
 }
@@ -10,21 +13,29 @@
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: 1px solid $primary-color;
-	background: $white;
+	border: 1px solid $primary-color-half-opacity;
+	background: $light-bg;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all 0.3s ease;
 
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+
+	transition: all 0.3s ease;
 	&:hover {
 		background: $light-bg;
-		transform: scale(1.05);
+		transform: scale(1.03);
 	}
 
 	&:active {
-		transform: scale(0.95);
+		border: 1px solid $primary-color-opacity;
+		background: $light-bg;
+		transform: scale(0.85);
 	}
 
 	svg {
@@ -35,12 +46,12 @@
 
 .prevButton {
 	svg {
-		transform: rotate(180deg);
+		transform: rotate(0);
 	}
 }
 .nextButton {
 	svg {
-		transform: rotate(180deg);
+		transform: rotate(0);
 	}
 }
 

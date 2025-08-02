@@ -14,7 +14,7 @@
 	.leftLine,
 	.rightLine {
 		position: absolute;
-		background: $primary-color;
+		background: $primary-color-opacity;
 	}
 
 	.horizontal {
@@ -35,14 +35,14 @@
 
 	.leftLine {
 		top: 0;
-		left: 80px;
+		left: 0;
 		height: 100%;
 		width: 1px;
 	}
 
 	.rightLine {
 		top: 0;
-		right: 80px;
+		right: 0;
 		height: 100%;
 		width: 1px;
 	}

@@ -9,6 +9,7 @@ interface TimelinePointProps {
 	title: string;
 	isActive: boolean;
 	onClick: () => void;
+	rotation: string | number;
 }
 
 export const TimelinePoint: React.FC<TimelinePointProps> = ({
@@ -17,31 +18,36 @@ export const TimelinePoint: React.FC<TimelinePointProps> = ({
 	title,
 	isActive,
 	onClick,
+	rotation,
 }) => {
 	const [isHovered, setIsHovered] = useState(false);
-	const showTooltip = isHovered || isActive;
 
 	return (
 		<div
-			className={`${styles.point} ${isActive ? styles.active : ''}`}
+			// className={`${styles.point} ${isActive ? styles.active : ''}`}
+			className={`${styles.point}`}
 			style={{
-				transform: `translate(${position.x}px, ${position.y}px)`,
+				transform: `translate(${position.x}px, ${position.y}px) translate(-50%, -50%)`,
 			}}
 			onClick={onClick}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			{showTooltip && (
+			<span
+				className={styles.tooltipIndex}
+				style={{
+					transform: `rotate(${-rotation}deg)`,
+				}}
+			>
+				{index + 1}
+			</span>
+			{isHovered && (
 				<div
 					className={styles.tooltip}
 					style={{
-						transform:
-							position.angle > 90 && position.angle < 270
-								? 'translateX(-100%)'
-								: 'translateX(0)',
+						transform: `rotate(${-rotation}deg)`,
 					}}
 				>
-					<span className={styles.tooltipIndex}>{index + 1}</span>
 					<span className={styles.tooltipTitle}>{title}</span>
 				</div>
 			)}

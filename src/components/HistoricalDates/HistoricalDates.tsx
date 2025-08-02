@@ -23,14 +23,8 @@ export const HistoricalDates: React.FC<HistoricalDatesProps> = ({ data }) => {
 	return (
 		<div className={styles.historicalDates}>
 			<Crosshair />
-
 			<div className={styles.contentWrapper}>
 				<Title />
-
-				<div className={styles.yearsContainer}>
-					<YearCounter value={currentPeriod.startYear} color="#5D5FEF" />
-					<YearCounter value={currentPeriod.endYear} color="#EF5DA8" />
-				</div>
 
 				<CircleTimeline
 					periods={data}
@@ -39,6 +33,10 @@ export const HistoricalDates: React.FC<HistoricalDatesProps> = ({ data }) => {
 					isMobile={isMobile}
 				/>
 
+				<div className={styles.yearsContainer}>
+					<YearCounter value={currentPeriod.startYear} color="#5D5FEF" />
+					<YearCounter value={currentPeriod.endYear} color="#EF5DA8" />
+				</div>
 				{/* <EventsSlider events={currentPeriod.events} /> */}
 			</div>
 		</div>

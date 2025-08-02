@@ -21,6 +21,14 @@ module.exports = {
 		port: 3000,
 		historyApiFallback: true,
 		hot: true,
+		client: {
+			overlay: {
+				errors: true,
+				warnings: false,
+			},
+			progress: true,
+		},
+		watchFiles: ['src/**/*.scss'], // Следим за изменениями SCSS
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -44,17 +52,26 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [
-					MiniCssExtractPlugin.loader,
+					// Используем style-loader вместо MiniCssExtractPlugin для HMR
+					'style-loader',
 					{
 						loader: 'css-loader',
 						options: {
 							modules: {
 								auto: true,
 								localIdentName: '[name]__[local]--[hash:base64:5]',
+								exportLocalsConvention: 'camelCaseOnly',
 							},
+							sourceMap: true,
 						},
 					},
-					'sass-loader',
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+							implementation: require('sass'),
+						},
+					},
 				],
 			},
 			{
@@ -72,11 +89,14 @@ module.exports = {
 			template: './public/index.html',
 			favicon: './public/favicon.ico',
 		}),
-		new MiniCssExtractPlugin({
-			filename: 'styles.[contenthash].css',
-		}),
+		// MiniCssExtractPlugin только для production
+		// new MiniCssExtractPlugin({
+		//   filename: 'styles.[contenthash].css',
+		// }),
 	],
 	optimization: {
-		minimizer: [new CssMinimizerPlugin()],
+		minimizer: [
+			// new CssMinimizerPlugin(),
+		],
 	},
 };

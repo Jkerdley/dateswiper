@@ -32,6 +32,7 @@ export const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
 					// @ts-ignore
 					swiper.params.navigation.nextEl = nextRef.current;
 				}}
+				watchOverflow={true} // Важно для ограничения
 			>
 				{events.map((event) => (
 					<SwiperSlide key={event.id}>
