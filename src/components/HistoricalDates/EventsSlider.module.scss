@@ -1,9 +1,9 @@
 @use '../../styles/variables' as *;
 
-sliderContainer {
+.sliderContainer {
 	grid-area: slider;
 	width: 100%;
-	padding: 20px 0;
+	padding: 20px 80px;
 	overflow: hidden;
 
 	.swiper {
@@ -24,23 +24,33 @@ sliderContainer {
 
 	.sliderControls {
 		display: flex;
-		justify-content: flex-end;
+		width: 100%;
+		justify-content: space-between;
+		position: absolute;
+		top: 30%;
 		gap: 20px;
-		margin-top: 30px;
+		z-index: 50;
 
 		.controlButton {
-			width: 50px;
-			height: 50px;
+			width: 40px;
+			height: 40px;
 			border-radius: 50%;
-			border: 1px solid $primary-color;
+			border: transparent;
 			background: $white;
+			box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
+			will-change: transform;
+			transition: background ease 0.25s, border ease 0.25s, transform ease 0.25s;
 
 			&:hover {
 				background: $light-bg;
+				border: 1px solid $primary-color-opacity;
+			}
+			&:active {
+				transform: scale(0.85);
 			}
 		}
 	}
