@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Navigation } from 'swiper/modules';
 import { Event } from '../../data/historicalData';
 import { EventCard } from './EventCard';
@@ -26,11 +27,13 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 					prevEl: prevRef.current,
 					nextEl: nextRef.current,
 				}}
-				onBeforeInit={(swiper) => {
-					// @ts-ignore
-					swiper.params.navigation.prevEl = prevRef.current;
-					// @ts-ignore
-					swiper.params.navigation.nextEl = nextRef.current;
+				onBeforeInit={(swiper: SwiperType) => {
+					const navigation = swiper.params.navigation;
+					if (navigation && typeof navigation === 'object') {
+						navigation.prevEl = prevRef.current;
+						navigation.nextEl = nextRef.current;
+						swiper.navigation.update();
+					}
 				}}
 				watchOverflow={true}
 			>

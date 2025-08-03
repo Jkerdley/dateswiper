@@ -1,7 +1,6 @@
-import React from 'react';
 import * as styles from './Crosshair.module.scss';
 
-export const Crosshair: React.FC = () => {
+export const Crosshair = () => {
 	return (
 		<div className={styles.crosshair}>
 			<div className={styles.horizontal} />

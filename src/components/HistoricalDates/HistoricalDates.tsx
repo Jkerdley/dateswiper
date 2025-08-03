@@ -22,25 +22,27 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 
 	return (
 		<>
-			<div className={styles.historicalDates}>
+			<main className={styles.historicalDates}>
 				<Crosshair />
 				<div className={styles.contentWrapper}>
 					<Title />
 
-					<CircleTimeline
-						periods={data}
-						activeIndex={activePeriod}
-						onSelect={setActivePeriod}
-						isMobile={isMobile}
-					/>
+					<section className={styles.datesAndCircleContainer}>
+						<CircleTimeline
+							periods={data}
+							activeIndex={activePeriod}
+							onSelect={setActivePeriod}
+							isMobile={isMobile}
+						/>
 
-					<div className={styles.yearsContainer}>
-						<YearCounter value={currentPeriod.startYear} color="#5D5FEF" />
-						<YearCounter value={currentPeriod.endYear} color="#EF5DA8" />
-					</div>
+						<div className={styles.yearsContainer}>
+							<YearCounter value={currentPeriod.startYear} color="#5D5FEF" />
+							<YearCounter value={currentPeriod.endYear} color="#EF5DA8" />
+						</div>
+					</section>
 					<EventsSlider events={currentPeriod.events} />
 				</div>
-			</div>
+			</main>
 		</>
 	);
 };
