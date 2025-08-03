@@ -29,6 +29,14 @@
 
 	.tooltipIndex {
 		display: none;
+		&.active {
+			display: flex;
+			font-family: $font-main;
+			font-weight: 500;
+			font-size: 20px;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	&.active {
@@ -52,7 +60,7 @@
 			// background: $white;
 			// border: 1px solid $primary-color;
 			font-family: $font-main;
-			font-weight: 400;
+			font-weight: 500;
 			font-size: 20px;
 		}
 	}
@@ -60,20 +68,29 @@
 
 .tooltip {
 	position: absolute;
-	left: 80px;
+	// left: 80px;
+	transform: translateX(-80px);
 	z-index: 40;
 	white-space: nowrap;
 	display: flex;
 	align-items: center;
 	backface-visibility: hidden;
-
-	transition: all 0.3s ease;
 	will-change: transform;
+	opacity: 0;
+	transition: opacity 0.3s ease 0.8s;
+	&.active {
+		opacity: 1;
+		pointer-events: none;
+	}
 
 	.tooltipTitle {
 		font-family: $font-main;
 		font-weight: 700;
 		font-size: 20px;
 		color: $primary-color;
+		display: none;
+		&.active {
+			display: flex;
+		}
 	}
 }

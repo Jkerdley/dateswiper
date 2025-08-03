@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { TimePeriod } from '../../data/historicalData';
 
 import gsap from 'gsap';
@@ -13,12 +13,8 @@ interface CircleTimelineProps {
 	isMobile: boolean;
 }
 
-export const CircleTimeline: React.FC<CircleTimelineProps> = ({
-	periods,
-	activeIndex,
-	onSelect,
-	isMobile,
-}) => {
+export const CircleTimeline = (props: CircleTimelineProps) => {
+	const { periods, activeIndex, onSelect, isMobile } = props;
 	const circleRef = useRef<HTMLDivElement>(null);
 	const [rotation, setRotation] = useState<string | number>(0);
 	const radius = isMobile ? 160 : 265;
@@ -26,7 +22,7 @@ export const CircleTimeline: React.FC<CircleTimelineProps> = ({
 
 	useEffect(() => {
 		if (circleRef.current) {
-			const targetRotation = -activeIndex * (360 / periods.length);
+			const targetRotation = -activeIndex * (360 / periods.length) + 30;
 
 			gsap.to(circleRef.current, {
 				rotation: targetRotation,

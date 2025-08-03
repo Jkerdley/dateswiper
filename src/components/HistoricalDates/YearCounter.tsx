@@ -1,13 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import * as styles from './YearCounter.module.scss';
-
 interface YearCounterProps {
 	value: number;
 	color: string;
 }
 
-export const YearCounter: React.FC<YearCounterProps> = ({ value, color }) => {
+export const YearCounter = ({ value, color }: YearCounterProps) => {
 	const counterRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {

@@ -1,7 +1,6 @@
-import React from 'react';
 import * as styles from './Title.module.scss';
 
-export const Title: React.FC = () => {
+export const Title = () => {
 	return (
 		<div className={styles.titleContainer}>
 			<div className={styles.gradientLine}></div>

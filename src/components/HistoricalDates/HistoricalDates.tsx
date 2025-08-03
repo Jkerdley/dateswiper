@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TimePeriod } from '../../data/historicalData';
 
-import useWindowSize from '../../hooks/useWindowSize';
+import { useWindowSize } from '../../hooks/useWindowSize';
 import * as styles from './HistoricalDates.module.scss';
 import { Crosshair } from './Crosshair';
 import { Title } from './Title';
@@ -13,7 +13,7 @@ interface HistoricalDatesProps {
 	data: TimePeriod[];
 }
 
-export const HistoricalDates: React.FC<HistoricalDatesProps> = ({ data }) => {
+export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 	const [activePeriod, setActivePeriod] = useState(0);
 	const { width } = useWindowSize();
 	const isMobile = width <= 768;

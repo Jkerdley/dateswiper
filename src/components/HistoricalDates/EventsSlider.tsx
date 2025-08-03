@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { Event } from '../../data/historicalData';
@@ -12,7 +12,7 @@ interface EventsSliderProps {
 	events: Event[];
 }
 
-export const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
+export const EventsSlider = ({ events }: EventsSliderProps) => {
 	const prevRef = useRef<HTMLButtonElement>(null);
 	const nextRef = useRef<HTMLButtonElement>(null);
 
