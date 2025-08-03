@@ -1,0 +1,27 @@
+@use '../../styles/variables' as *;
+
+.circleContainer {
+	grid-area: years;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.circle {
+	position: relative;
+	width: 530px;
+	height: 530px;
+	border: 1px solid $primary-color-opacity;
+	border-radius: 50%;
+	transform-origin: center;
+	margin: 0 auto;
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.circleContainer {
+		display: none;
+	}
+}
