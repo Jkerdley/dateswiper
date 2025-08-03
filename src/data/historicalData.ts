@@ -61,7 +61,7 @@ export const historicalData: TimePeriod[] = [
 		events: [
 			{
 				id: 1,
-				date: '2015',
+				date: '1997',
 				description:
 					'13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
 			},
@@ -74,6 +74,21 @@ export const historicalData: TimePeriod[] = [
 			{
 				id: 3,
 				date: '2017',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 4,
+				date: '2018',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 5,
+				date: '2022',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 6,
+				date: '2025',
 				description: 'Tesla представила первый электрический грузовик Tesla Semi',
 			},
 		],
@@ -101,6 +116,21 @@ export const historicalData: TimePeriod[] = [
 				date: '2017',
 				description: 'Tesla представила первый электрический грузовик Tesla Semi',
 			},
+			{
+				id: 4,
+				date: '2018',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 5,
+				date: '2022',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 6,
+				date: '2025',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
 		],
 	},
 	{
@@ -111,8 +141,9 @@ export const historicalData: TimePeriod[] = [
 		events: [
 			{
 				id: 1,
-				date: '1995',
-				description: 'Частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+				date: '1999',
+				description:
+					'13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
 			},
 			{
 				id: 2,
@@ -125,6 +156,21 @@ export const historicalData: TimePeriod[] = [
 				date: '2017',
 				description: 'Tesla представила первый электрический грузовик Tesla Semi',
 			},
+			{
+				id: 4,
+				date: '2018',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 5,
+				date: '2022',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 6,
+				date: '2025',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
 		],
 	},
 	{
@@ -135,17 +181,34 @@ export const historicalData: TimePeriod[] = [
 		events: [
 			{
 				id: 1,
-				date: '1994',
-				description: 'Частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+				date: '1995',
+				description:
+					'13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
 			},
 			{
 				id: 2,
 				date: '2016',
-				description: 'Телескоп «Хаббл» обнаружил самую удалённую галактику GN-211',
+				description:
+					'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
 			},
 			{
 				id: 3,
 				date: '2017',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 4,
+				date: '2018',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 5,
+				date: '2022',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 6,
+				date: '2025',
 				description: 'Tesla представила первый электрический грузовик Tesla Semi',
 			},
 		],
@@ -158,17 +221,34 @@ export const historicalData: TimePeriod[] = [
 		events: [
 			{
 				id: 1,
-				date: '1996',
-				description: 'Частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
+				date: '1995',
+				description:
+					'13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
 			},
 			{
 				id: 2,
 				date: '2016',
-				description: 'Телескоп «Хаббл» обнаружил самую удалённую галактику GN-211',
+				description:
+					'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
 			},
 			{
 				id: 3,
 				date: '2017',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 4,
+				date: '2018',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 5,
+				date: '2022',
+				description: 'Tesla представила первый электрический грузовик Tesla Semi',
+			},
+			{
+				id: 6,
+				date: '2025',
 				description: 'Tesla представила первый электрический грузовик Tesla Semi',
 			},
 		],

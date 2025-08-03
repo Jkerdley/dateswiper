@@ -2,25 +2,13 @@
 
 .sliderContainer {
 	grid-area: slider;
+	// position: absolute;
+	// bottom: 50px;
 	width: 100%;
-	padding: 20px 80px;
+	padding: 0 80px;
+	padding-top: 60px;
 	overflow: hidden;
-
-	.swiper {
-		width: 100%;
-		padding: 20px 0;
-
-		.swiper-wrapper {
-			display: flex;
-			width: auto !important;
-		}
-
-		.swiper-slide {
-			width: 300px !important;
-			flex-shrink: 0;
-			max-width: 100%;
-		}
-	}
+	cursor: grab;
 
 	.sliderControls {
 		display: flex;
@@ -29,7 +17,12 @@
 		position: absolute;
 		top: 30%;
 		gap: 20px;
-		z-index: 50;
+
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-tap-highlight-color: transparent;
 
 		.controlButton {
 			width: 40px;
@@ -42,6 +35,7 @@
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
+			z-index: 50;
 			will-change: transform;
 			transition: background ease 0.25s, border ease 0.25s, transform ease 0.25s;
 
