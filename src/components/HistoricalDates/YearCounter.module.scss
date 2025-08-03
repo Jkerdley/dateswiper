@@ -10,12 +10,8 @@
 	min-width: 300px;
 	max-width: 100%;
 	overflow: hidden;
-}
 
-@media (max-width: $breakpoint-mobile) {
-	.yearCounter {
-		font-size: 100px;
-		line-height: 80px;
-		min-width: 150px;
+	@media (max-width: $breakpoint-tablet) {
+		font-size: 16dvw;
 	}
 }

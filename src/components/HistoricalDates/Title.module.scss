@@ -4,19 +4,21 @@
 	grid-area: title;
 	display: flex;
 	align-items: center;
-	margin-bottom: 20px;
-	max-width: 30%;
+	max-width: 40%;
 	position: absolute;
 	left: 0;
-	top: 100px;
+	top: 130px;
 }
 
 .gradientLine {
 	width: 5px;
 	height: 120px;
 	background: linear-gradient(180deg, $accent-start 0%, $accent-end 100%);
-	margin-right: 70px;
+	margin-right: 80px;
 	flex-shrink: 0;
+	@media (max-width: $breakpoint-laptop) {
+		height: 90px;
+	}
 }
 
 .title {
@@ -26,7 +28,10 @@
 	line-height: 120%;
 	color: $primary-color;
 	max-width: 100%;
-	word-break: break-word;
+	@media (max-width: $breakpoint-laptop) {
+		font-size: 42px;
+		text-align: left;
+	}
 }
 
 @media (max-width: $breakpoint-mobile) {
