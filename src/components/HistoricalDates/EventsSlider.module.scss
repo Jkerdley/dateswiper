@@ -1,0 +1,62 @@
+@use '../../styles/variables' as *;
+
+sliderContainer {
+	grid-area: slider;
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+
+	.swiper {
+		width: 100%;
+		padding: 20px 0;
+
+		.swiper-wrapper {
+			display: flex;
+			width: auto !important;
+		}
+
+		.swiper-slide {
+			width: 300px !important;
+			flex-shrink: 0;
+			max-width: 100%;
+		}
+	}
+
+	.sliderControls {
+		display: flex;
+		justify-content: flex-end;
+		gap: 20px;
+		margin-top: 30px;
+
+		.controlButton {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border: 1px solid $primary-color;
+			background: $white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+
+			&:hover {
+				background: $light-bg;
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.sliderContainer {
+		padding: 0;
+
+		.swiper {
+			padding: 10px 0;
+		}
+
+		.sliderControls {
+			justify-content: center;
+			margin-top: 20px;
+		}
+	}
+}
