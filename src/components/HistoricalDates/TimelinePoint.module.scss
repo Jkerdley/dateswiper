@@ -68,8 +68,7 @@
 
 .tooltip {
 	position: absolute;
-	// left: 80px;
-	transform: translateX(-80px);
+	left: 80px;
 	z-index: 40;
 	white-space: nowrap;
 	display: flex;
@@ -77,7 +76,9 @@
 	backface-visibility: hidden;
 	will-change: transform;
 	opacity: 0;
-	transition: opacity 0.3s ease 0.8s;
+	transition: opacity 0.3s ease-in-out 0.8s;
+	transform-origin: -50px center;
+
 	&.active {
 		opacity: 1;
 		pointer-events: none;

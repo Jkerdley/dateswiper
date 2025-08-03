@@ -32,7 +32,7 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 					// @ts-ignore
 					swiper.params.navigation.nextEl = nextRef.current;
 				}}
-				watchOverflow={true} // Важно для ограничения
+				watchOverflow={true}
 			>
 				{events.map((event) => (
 					<SwiperSlide key={event.id}>
@@ -42,13 +42,25 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 
 				<div className={styles.sliderControls}>
 					<button ref={prevRef} className={styles.controlButton}>
-						<svg width="10" height="14" viewBox="0 0 10 14" fill="none">
-							<path d="M8.5 0.75L2.25 7L8.5 13.25" stroke="#42567A" strokeWidth="2" />
+						<svg
+							width="8"
+							height="12"
+							viewBox="0 0 8 12"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M7 11L2 6L7 1" stroke="#3877EE" stroke-width="2" />
 						</svg>
 					</button>
 					<button ref={nextRef} className={styles.controlButton}>
-						<svg width="10" height="14" viewBox="0 0 10 14" fill="none">
-							<path d="M1.5 0.75L7.75 7L1.5 13.25" stroke="#42567A" strokeWidth="2" />
+						<svg
+							width="8"
+							height="12"
+							viewBox="0 0 8 12"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M1 1L6 6L1 11" stroke="#3877EE" stroke-width="2" />
 						</svg>
 					</button>
 				</div>
