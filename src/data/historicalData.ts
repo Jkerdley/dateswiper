@@ -162,7 +162,7 @@ export const historicalData: TimePeriod[] = [
 		id: 5,
 		title: 'Технологии',
 		startYear: 2004,
-		endYear: 2014,
+		endYear: 2013,
 		events: [
 			{
 				id: 1,
@@ -195,7 +195,7 @@ export const historicalData: TimePeriod[] = [
 		id: 6,
 		title: 'Наука',
 		startYear: 2015,
-		endYear: 2025,
+		endYear: 2020,
 		events: [
 			{
 				id: 1,
