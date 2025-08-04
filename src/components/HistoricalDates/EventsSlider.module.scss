@@ -128,6 +128,7 @@
 	padding-inline: 80px;
 	padding-top: 60px;
 	cursor: grab;
+	overflow: hidden;
 	// background: #fa3403d2;
 	@media (max-width: $breakpoint-tablet) {
 		padding-inline: 40px;
@@ -136,6 +137,8 @@
 	@media (max-width: $breakpoint-mobile) {
 		padding-inline: 20px;
 		padding-top: 0;
+		width: 100%;
+		max-width: 100%;
 	}
 }
 
@@ -143,12 +146,13 @@
 	opacity: 0;
 	transition: opacity 0.4s ease-in-out;
 	max-width: 100%;
+	width: 100%;
 	height: 100%;
+	overflow: hidden;
 	// background: #14fa036e;
 	@media (max-width: $breakpoint-mobile) {
 		border-top: 1px solid #c7cdd9;
 		padding-top: 20px;
-		overflow: hidden;
 	}
 	&.visible {
 		opacity: 1;

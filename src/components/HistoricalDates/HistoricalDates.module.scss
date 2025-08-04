@@ -13,10 +13,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	overflow-x: hidden;
 	@media (max-width: $breakpoint-mobile) {
-		width: 768px;
+		width: 100%;
 		height: 100dvh;
 		padding: 0;
+		overflow-x: hidden;
 	}
 }
 
@@ -36,6 +38,8 @@
 	justify-items: center;
 	align-items: center;
 	max-width: 100%;
+	overflow-x: hidden;
+	box-sizing: border-box;
 	@media (max-width: $breakpoint-mobile) {
 		grid-template-areas:
 			'title'
@@ -45,6 +49,9 @@
 		gap: 15px;
 		grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
 		align-items: stretch;
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
 	}
 }
 
@@ -87,7 +94,6 @@
 		grid-area: controls;
 		display: flex;
 		align-self: flex-end;
-		gap: 1rem;
 		margin-bottom: 2rem;
 	}
 }
