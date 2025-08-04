@@ -3,12 +3,12 @@
 .controls {
 	grid-area: controls;
 	position: absolute;
-	left: 80px;
+	left: 79px;
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
 	@media (max-width: $breakpoint-tablet) {
-		left: 20px;
+		left: 19px;
 		bottom: 20px;
 	}
 }
@@ -31,9 +31,9 @@
 	font-size: 14px;
 	color: $primary-color;
 	text-align: left;
+	margin-left: 1px;
 	margin-bottom: 20px;
 	@media (max-width: $breakpoint-mobile) {
-		margin-bottom: 5px;
 		margin-bottom: 10px;
 	}
 }
