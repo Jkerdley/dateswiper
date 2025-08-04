@@ -14,21 +14,14 @@ body {
 	overflow-x: hidden;
 }
 
-// .app {
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// 	min-height: 100vh;
-// 	padding: 40px 20px;
-// }
 .app {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	min-height: 100vh;
+	min-height: 100dvh;
 	padding: 0 20px;
-	max-width: 100vw; // Запрещаем выход за ширину экрана
-	overflow-x: hidden; // Скрываем переполнение
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 @font-face {
