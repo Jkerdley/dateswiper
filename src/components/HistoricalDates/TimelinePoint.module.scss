@@ -27,18 +27,6 @@
 		-webkit-user-select: none;
 	}
 
-	.tooltipIndex {
-		display: none;
-		&.active {
-			display: flex;
-			font-family: $font-main;
-			font-weight: 500;
-			font-size: 20px;
-			align-items: center;
-			justify-content: center;
-		}
-	}
-
 	&.active {
 		width: 56px;
 		height: 56px;
@@ -57,12 +45,22 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			// background: $white;
-			// border: 1px solid $primary-color;
 			font-family: $font-main;
 			font-weight: 500;
 			font-size: 20px;
 		}
+	}
+}
+
+.tooltipIndex {
+	display: none;
+	&.active {
+		display: flex;
+		font-family: $font-main;
+		font-weight: 500;
+		font-size: 20px;
+		align-items: center;
+		justify-content: center;
 	}
 }
 
@@ -83,15 +81,15 @@
 		opacity: 1;
 		pointer-events: none;
 	}
+}
 
-	.tooltipTitle {
-		font-family: $font-main;
-		font-weight: 700;
-		font-size: 20px;
-		color: $primary-color;
-		display: none;
-		&.active {
-			display: flex;
-		}
+.tooltipTitle {
+	font-family: $font-main;
+	font-weight: 700;
+	font-size: 20px;
+	color: $primary-color;
+	display: none;
+	&.active {
+		display: flex;
 	}
 }

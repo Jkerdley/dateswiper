@@ -1,78 +1,21 @@
-// {
-// 	"compilerOptions": {
-// 		// Целевая версия ECMAScript
-// 		"target": "es6",
-
-// 		// Система модулей
-// 		"module": "esnext",
-
-// 		// Стратегия разрешения модулей
-// 		"moduleResolution": "node",
-
-// 		// Используемые библиотеки типов
-// 		"lib": ["dom", "dom.iterable", "esnext"],
-
-// 		// Запрет неявного any
-// 		"noImplicitAny": true,
-
-// 		// Режим JSX (новый синтаксис React 17+)
-// 		"jsx": "react-jsx",
-
-// 		// Включение всех строгих проверок типов
-// 		"strict": true,
-
-// 		// Улучшенная совместимость с CommonJS
-// 		"esModuleInterop": true,
-
-// 		// Пропуск проверки типов в .d.ts файлах
-// 		"skipLibCheck": true,
-
-// 		// Проверка регистра имен файлов
-// 		"forceConsistentCasingInFileNames": true,
-
-// 		// Разрешение синтетических default импортов
-// 		"allowSyntheticDefaultImports": true,
-
-// 		// Разрешение компиляции .js файлов
-// 		"allowJs": true,
-
-// 		// Разрешение импорта JSON
-// 		"resolveJsonModule": true,
-
-// 		// Папка для output
-// 		"outDir": "./dist/",
-
-// 		// Базовый путь для абсолютных импортов
-// 		"baseUrl": "./src",
-
-// 		// Алиасы для путей
-// 		"paths": {
-// 			"@components/*": ["components/*"]
-// 		}
-// 	},
-
-// 	// Включаемые файлы
-// 	"include": ["src/**/*"],
-
-// 	// Исключаемые файлы
-// 	"exclude": ["node_modules", "dist"]
-// }
 {
 	"compilerOptions": {
-		"target": "es6", // Генерировать ES6 код
-		"module": "esnext", // Использовать современную систему модулей
-		"moduleResolution": "node", // Разрешение модулей как в Node.js
-		"jsx": "react-jsx", // Режим JSX для React
-		"strict": true, // Включить все строгие проверки типов
-		"esModuleInterop": true, // Улучшенная совместимость с CommonJS
-		"skipLibCheck": true, // Пропускать проверку типов в .d.ts файлах
-		"forceConsistentCasingInFileNames": true, // Проверка регистра имен файлов
-		"resolveJsonModule": true, // Разрешить импорт JSON
-		"outDir": "./dist/", // Папка для скомпилированных файлов
-		"baseUrl": "./src", // Базовый путь для абсолютных импортов
+		"target": "es6",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"jsx": "react-jsx",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"outDir": "./dist/",
+		"baseUrl": "./src",
 		"paths": {
-			"@components/*": ["components/*"] // Алиасы для путей
+			"@components/*": ["components/*"]
 		}
 	},
-	"include": ["src/**/*"] // Включать все файлы в src
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
 }

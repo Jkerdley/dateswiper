@@ -28,7 +28,7 @@ module.exports = {
 			},
 			progress: true,
 		},
-		watchFiles: ['src/**/*.scss'], // Следим за изменениями SCSS
+		watchFiles: ['src/**/*.scss'],
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -52,7 +52,6 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [
-					// Используем style-loader вместо MiniCssExtractPlugin для HMR
 					'style-loader',
 					{
 						loader: 'css-loader',
@@ -89,14 +88,11 @@ module.exports = {
 			template: './public/index.html',
 			favicon: './public/favicon.ico',
 		}),
-		// MiniCssExtractPlugin только для production
 		// new MiniCssExtractPlugin({
-		//   filename: 'styles.[contenthash].css',
+		// 	filename: 'styles.[contenthash].css',
 		// }),
 	],
 	optimization: {
-		minimizer: [
-			// new CssMinimizerPlugin(),
-		],
+		// minimizer: [new CssMinimizerPlugin()],
 	},
 };
