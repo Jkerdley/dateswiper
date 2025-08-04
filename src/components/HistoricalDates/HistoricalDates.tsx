@@ -69,7 +69,6 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 
 	const currentPeriod = data[activePeriod];
 
-	// Логика управления периодами
 	const handleNext = () => {
 		setActivePeriod((prev) => (prev + 1) % data.length);
 	};
