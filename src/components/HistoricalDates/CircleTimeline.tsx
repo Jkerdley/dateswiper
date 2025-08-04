@@ -16,7 +16,6 @@ export const CircleTimeline = (props: CircleTimelineProps) => {
 	const { periods, points, activeIndex, onSelect } = props;
 	const circleRef = useRef<HTMLDivElement>(null);
 	const [rotation, setRotation] = useState<string | number>(0);
-	// const points = calculatePointPositions(periods.length, CIRCLE_RADIUS);
 
 	useEffect(() => {
 		if (circleRef.current) {

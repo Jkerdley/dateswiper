@@ -51,22 +51,14 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 			<div className={`${styles.sliderWrapper} ${isVisible ? styles.visible : ''}`}>
 				<Swiper
 					modules={[Navigation]}
-					// spaceBetween={60}
-					// slidesPerView={3}
 					observer={true}
 					observeParents={true}
 					breakpoints={{
 						0: { slidesPerView: 1, spaceBetween: 10 },
-						320: { slidesPerView: 2, spaceBetween: 10 },
-						768: { slidesPerView: 3, spaceBetween: 20 },
+						320: { slidesPerView: 1.25, spaceBetween: 0 },
+						768: { slidesPerView: 2, spaceBetween: 20 },
 						1024: { slidesPerView: 3, spaceBetween: 40 },
-						// 1440: { slidesPerView: 4, spaceBetween: 60 },
 					}}
-					// className="swiper"
-					// navigation={{
-					// 	prevEl: prevRef.current,
-					// 	nextEl: nextRef.current,
-					// }}
 					onBeforeInit={(swiper: SwiperType) => {
 						const nav = swiper.params.navigation as any;
 						nav.prevEl = prevRef.current;

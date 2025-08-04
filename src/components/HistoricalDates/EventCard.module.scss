@@ -4,16 +4,13 @@
 	min-height: 200px;
 	width: 100%;
 	max-width: 400px;
-	box-sizing: border-box;
-	// background: #db14146b;
 	@media (max-width: $breakpoint-tablet) {
-		// width: auto;
-		min-height: 150px;
 		max-width: 100%;
+		min-height: 150px;
 	}
 	@media (max-width: $breakpoint-mobile) {
 		width: 100%;
-		max-width: 100%;
+		max-width: 90%;
 		min-height: 80px;
 	}
 }
