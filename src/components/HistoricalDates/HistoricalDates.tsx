@@ -57,6 +57,8 @@ import { CircleTimeline } from './CircleTimeline';
 import { EventsSlider } from './EventsSlider';
 import { Controls } from './Controls';
 import { TimelinePoint } from './TimelinePoint';
+import { calculatePointPositions } from '../../utils/angleUtils';
+import { CIRCLE_RADIUS } from '../../constants/constants';
 
 interface HistoricalDatesProps {
 	data: TimePeriod[];
@@ -75,6 +77,8 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 		setActivePeriod((prev) => (prev - 1 + data.length) % data.length);
 	};
 
+	const points = calculatePointPositions(data.length, CIRCLE_RADIUS);
+
 	return (
 		<main className={styles.historicalDates}>
 			<Crosshair />
@@ -82,7 +86,12 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 				<Title />
 
 				<section className={styles.datesAndCircleContainer}>
-					<CircleTimeline periods={data} activeIndex={activePeriod} onSelect={setActivePeriod} />
+					<CircleTimeline
+						points={points}
+						periods={data}
+						activeIndex={activePeriod}
+						onSelect={setActivePeriod}
+					/>
 
 					<div className={styles.yearsContainer}>
 						<YearCounter value={currentPeriod.startYear} color="#5D5FEF" />
@@ -90,7 +99,18 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 					</div>
 				</section>
 				<Controls onNext={handleNext} onPrev={handlePrev} />
-				{/* <TimelinePoint /> */}
+				<div className={styles.dotsNavigationContainer}>
+					{points.map((point, index) => (
+						<TimelinePoint
+							key={data[index].id}
+							isMobile={true}
+							index={index}
+							title={data[index].title}
+							isActive={index === activePeriod}
+							onClick={() => setActivePeriod(index)}
+						/>
+					))}
+				</div>
 				<EventsSlider events={currentPeriod.events} />
 			</div>
 		</main>

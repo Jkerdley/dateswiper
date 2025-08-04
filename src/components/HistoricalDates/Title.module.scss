@@ -13,7 +13,7 @@
 		top: 50px;
 	}
 	@media (max-width: $breakpoint-mobile) {
-		top: 10%;
+		top: 50%;
 	}
 }
 
@@ -29,7 +29,7 @@
 	@media (max-width: $breakpoint-tablet) {
 		margin-right: 40px;
 	}
-	@media (max-width: $breakpoint-mobile-s) {
+	@media (max-width: $breakpoint-mobile) {
 		display: none;
 	}
 }
@@ -46,9 +46,6 @@
 		text-align: left;
 	}
 	@media (max-width: $breakpoint-mobile) {
-		font-size: 32px;
-	}
-	@media (max-width: $breakpoint-mobile-s) {
 		font-size: 20px;
 		text-align: left;
 		margin-left: 20px;

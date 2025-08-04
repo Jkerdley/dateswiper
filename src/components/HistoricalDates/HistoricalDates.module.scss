@@ -14,6 +14,7 @@
 	justify-content: center;
 	align-items: center;
 	@media (max-width: $breakpoint-mobile) {
+		width: 768px;
 		height: 100dvh;
 		padding: 0;
 	}
@@ -42,9 +43,7 @@
 			'slider'
 			'controls';
 		gap: 15px;
-		grid-template-rows: 1fr auto 2fr 0.5fr;
-		background-color: rgba(0, 0, 0, 0.472);
-		// justify-items: stretch;
+		grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
 		align-items: stretch;
 	}
 }
@@ -55,15 +54,15 @@
 	position: relative;
 	align-content: center;
 	width: 100%;
-	background-color: rgba(205 12 12 / 0.47);
 	@media (max-width: $breakpoint-mobile) {
 		width: 100;
-		margin-bottom: 70px;
+		margin-bottom: 60px;
+		align-content: center;
+		justify-content: center;
 	}
 }
 
 .yearsContainer {
-	background-color: rgba(16 213 72 / 0.47);
 	display: flex;
 	position: absolute;
 	top: 50%;
@@ -75,6 +74,20 @@
 	flex-wrap: nowrap;
 	@media (max-width: $breakpoint-mobile) {
 		gap: 30px;
-		position: relative;
+		position: unset;
+		transform: none;
+		align-items: flex-end;
+	}
+}
+
+.dotsNavigationContainer {
+	display: none;
+
+	@media (max-width: $breakpoint-mobile) {
+		grid-area: controls;
+		display: flex;
+		align-self: flex-end;
+		gap: 1rem;
+		margin-bottom: 2rem;
 	}
 }

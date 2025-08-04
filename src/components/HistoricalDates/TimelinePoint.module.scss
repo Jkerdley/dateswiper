@@ -33,6 +33,12 @@
 		background: $light-bg;
 		border: 1px solid $primary-color-half-opacity;
 		z-index: 30;
+		@media (max-width: $breakpoint-mobile) {
+			width: 6px;
+			height: 6px;
+			border: transparent;
+			background: $primary-color;
+		}
 	}
 	&:hover {
 		width: 56px;
@@ -40,6 +46,12 @@
 		background: $light-bg;
 		border: 1px solid $primary-color-half-opacity;
 		z-index: 30;
+		@media (max-width: $breakpoint-mobile) {
+			width: 6px;
+			height: 6px;
+			border: transparent;
+			background: $primary-color;
+		}
 
 		.tooltipIndex {
 			display: flex;
@@ -48,6 +60,9 @@
 			font-family: $font-main;
 			font-weight: 500;
 			font-size: 20px;
+			@media (max-width: $breakpoint-mobile) {
+				display: none;
+			}
 		}
 	}
 }
@@ -61,6 +76,9 @@
 		font-size: 20px;
 		align-items: center;
 		justify-content: center;
+	}
+	@media (max-width: $breakpoint-mobile) {
+		display: none;
 	}
 }
 
@@ -81,6 +99,9 @@
 		opacity: 1;
 		pointer-events: none;
 	}
+	@media (max-width: $breakpoint-mobile) {
+		display: none;
+	}
 }
 
 .tooltipTitle {
@@ -91,5 +112,34 @@
 	display: none;
 	&.active {
 		display: flex;
+	}
+}
+
+.mobilePoint {
+	display: flex;
+	width: 6px;
+	height: 6px;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1rem;
+	background: $primary-color-opacity;
+	border-radius: 50%;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	transform-origin: center;
+	will-change: width, height;
+	transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border 0.3s ease 0.2s;
+	z-index: 20;
+	* {
+		user-select: none;
+		-webkit-user-select: none;
+	}
+	&.active {
+		width: 8px;
+		height: 8px;
+		background: $primary-color;
 	}
 }
