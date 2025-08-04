@@ -13,6 +13,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	overflow-x: hidden;
+	@media (max-width: $breakpoint-mobile) {
+		width: 100%;
+		height: 100dvh;
+		padding: 0;
+		overflow-x: hidden;
+	}
 }
 
 .contentWrapper {
@@ -31,6 +38,21 @@
 	justify-items: center;
 	align-items: center;
 	max-width: 100%;
+	overflow-x: hidden;
+	box-sizing: border-box;
+	@media (max-width: $breakpoint-mobile) {
+		grid-template-areas:
+			'title'
+			'years'
+			'slider'
+			'controls';
+		gap: 15px;
+		grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+		align-items: stretch;
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
 }
 
 .datesAndCircleContainer {
@@ -39,6 +61,12 @@
 	position: relative;
 	align-content: center;
 	width: 100%;
+	@media (max-width: $breakpoint-mobile) {
+		width: 100;
+		margin-bottom: 60px;
+		align-content: center;
+		justify-content: center;
+	}
 }
 
 .yearsContainer {
@@ -51,26 +79,21 @@
 	gap: 60px;
 	max-width: 100%;
 	flex-wrap: nowrap;
+	@media (max-width: $breakpoint-mobile) {
+		gap: 30px;
+		position: unset;
+		transform: none;
+		align-items: flex-end;
+	}
 }
 
-@media (max-width: $breakpoint-mobile) {
-	.historicalDates {
-		padding: 30px 20px;
+.dotsNavigationContainer {
+	display: none;
 
-		.contentWrapper {
-			grid-template-areas:
-				'title'
-				'years'
-				'controls'
-				'slider';
-			grid-template-columns: 1fr;
-			gap: 30px;
-		}
-
-		.yearsContainer {
-			padding-left: 60px;
-			gap: 20px;
-			flex-direction: column;
-		}
+	@media (max-width: $breakpoint-mobile) {
+		grid-area: controls;
+		display: flex;
+		align-self: flex-end;
+		margin-bottom: 2rem;
 	}
 }

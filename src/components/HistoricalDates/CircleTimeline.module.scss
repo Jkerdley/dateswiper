@@ -8,6 +8,9 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	@media (max-width: $breakpoint-mobile) {
+		display: none;
+	}
 }
 
 .circle {
@@ -31,10 +34,4 @@
 	background: $primary-color-opacity;
 	width: 100%;
 	pointer-events: none;
-}
-
-@media (max-width: $breakpoint-mobile) {
-	.circleContainer {
-		display: none;
-	}
 }

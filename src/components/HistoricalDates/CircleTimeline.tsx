@@ -2,22 +2,20 @@ import { useState, useEffect, useRef } from 'react';
 import { TimePeriod } from '../../data/historicalData';
 import gsap from 'gsap';
 import * as styles from './CircleTimeline.module.scss';
-import { calculatePointPositions } from '../../utils/angleUtils';
+import { PointPosition } from '../../utils/angleUtils';
 import { TimelinePoint } from './TimelinePoint';
 
 interface CircleTimelineProps {
 	periods: TimePeriod[];
+	points: PointPosition[];
 	activeIndex: number;
 	onSelect: (index: number) => void;
-	isMobile: boolean;
 }
 
 export const CircleTimeline = (props: CircleTimelineProps) => {
-	const { periods, activeIndex, onSelect, isMobile } = props;
+	const { periods, points, activeIndex, onSelect } = props;
 	const circleRef = useRef<HTMLDivElement>(null);
 	const [rotation, setRotation] = useState<string | number>(0);
-	const radius = isMobile ? 160 : 265;
-	const [points, setPoints] = useState(() => calculatePointPositions(periods.length, radius));
 
 	useEffect(() => {
 		if (circleRef.current) {
