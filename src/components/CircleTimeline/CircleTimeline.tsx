@@ -3,7 +3,7 @@ import { TimePeriod } from '../../data/historicalData';
 import gsap from 'gsap';
 import * as styles from './CircleTimeline.module.scss';
 import { PointPosition } from '../../utils/angleUtils';
-import { TimelinePoint } from './TimelinePoint';
+import { TimelinePoint } from '../TimelinePoint/TimelinePoint';
 
 interface CircleTimelineProps {
 	periods: TimePeriod[];
