@@ -9,15 +9,14 @@ interface CircleTimelineProps {
 	periods: TimePeriod[];
 	activeIndex: number;
 	onSelect: (index: number) => void;
-	isMobile: boolean;
 }
 
 export const CircleTimeline = (props: CircleTimelineProps) => {
-	const { periods, activeIndex, onSelect, isMobile } = props;
+	const { periods, activeIndex, onSelect } = props;
 	const circleRef = useRef<HTMLDivElement>(null);
 	const [rotation, setRotation] = useState<string | number>(0);
-	const radius = isMobile ? 160 : 265;
-	const [points, setPoints] = useState(() => calculatePointPositions(periods.length, radius));
+	const CIRCLE_RADIUS = 265;
+	const points = calculatePointPositions(periods.length, CIRCLE_RADIUS);
 
 	useEffect(() => {
 		if (circleRef.current) {

@@ -19,7 +19,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	min-height: 100dvh;
-	padding: 0 20px;
+	padding: 0;
 	max-width: 100vw;
 	overflow-x: hidden;
 }
@@ -43,32 +43,4 @@ body {
 	src: url('/public/assets/fonts/BebasNeue-Regular.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
-}
-
-@media (max-width: $breakpoint-tablet) {
-	.historicalDates {
-		width: 100%;
-		padding: 40px;
-
-		.yearsContainer {
-			padding-left: 80px;
-		}
-	}
-}
-
-@media (max-width: $breakpoint-mobile) {
-	.historicalDates {
-		padding: 20px;
-
-		.yearsContainer {
-			padding-left: 40px;
-			flex-direction: column;
-			align-items: flex-start;
-		}
-	}
-
-	.circle {
-		width: $circle-size-mobile;
-		height: $circle-size-mobile;
-	}
 }

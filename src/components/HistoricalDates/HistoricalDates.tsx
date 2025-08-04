@@ -49,7 +49,6 @@
 // HistoricalDates.tsx
 import { useState } from 'react';
 import { TimePeriod } from '../../data/historicalData';
-import { useWindowSize } from '../../hooks/useWindowSize';
 import * as styles from './HistoricalDates.module.scss';
 import { Crosshair } from './Crosshair';
 import { Title } from './Title';
@@ -57,6 +56,7 @@ import { YearCounter } from './YearCounter';
 import { CircleTimeline } from './CircleTimeline';
 import { EventsSlider } from './EventsSlider';
 import { Controls } from './Controls';
+import { TimelinePoint } from './TimelinePoint';
 
 interface HistoricalDatesProps {
 	data: TimePeriod[];
@@ -64,8 +64,6 @@ interface HistoricalDatesProps {
 
 export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 	const [activePeriod, setActivePeriod] = useState(0);
-	const { width } = useWindowSize();
-	const isMobile = width <= 768;
 
 	const currentPeriod = data[activePeriod];
 
@@ -84,12 +82,7 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 				<Title />
 
 				<section className={styles.datesAndCircleContainer}>
-					<CircleTimeline
-						periods={data}
-						activeIndex={activePeriod}
-						onSelect={setActivePeriod}
-						isMobile={isMobile}
-					/>
+					<CircleTimeline periods={data} activeIndex={activePeriod} onSelect={setActivePeriod} />
 
 					<div className={styles.yearsContainer}>
 						<YearCounter value={currentPeriod.startYear} color="#5D5FEF" />
@@ -97,7 +90,7 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 					</div>
 				</section>
 				<Controls onNext={handleNext} onPrev={handlePrev} />
-
+				{/* <TimelinePoint /> */}
 				<EventsSlider events={currentPeriod.events} />
 			</div>
 		</main>

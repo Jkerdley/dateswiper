@@ -14,4 +14,8 @@
 	@media (max-width: $breakpoint-tablet) {
 		font-size: 16vw;
 	}
+	@media (max-width: $breakpoint-mobile) {
+		font-size: 56px;
+		min-width: auto;
+	}
 }
