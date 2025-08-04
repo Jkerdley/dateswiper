@@ -1,22 +1,23 @@
 import { useState } from 'react';
-import { TimePeriod } from '../../data/historicalData';
+import { TimePeriod } from '../data/historicalData';
 import * as styles from './HistoricalDates.module.scss';
-import { Crosshair } from './Crosshair';
-import { Title } from './Title';
-import { YearCounter } from './YearCounter';
-import { CircleTimeline } from './CircleTimeline';
-import { EventsSlider } from './EventsSlider';
-import { Controls } from './Controls';
-import { TimelinePoint } from './TimelinePoint';
-import { calculatePointPositions } from '../../utils/angleUtils';
-import { CIRCLE_RADIUS } from '../../constants/constants';
 
-interface HistoricalDatesProps {
-	data: TimePeriod[];
-}
+import { calculatePointPositions } from '../utils/angleUtils';
+import { CIRCLE_RADIUS, MAX_PERIODS } from '../constants/constants';
+import {
+	CircleTimeline,
+	Controls,
+	Crosshair,
+	EventsSlider,
+	TimelinePoint,
+	Title,
+	YearCounter,
+} from '@components/index';
+import { historicalData } from '../data/historicalData';
 
-export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
+export const HistoricalDates = () => {
 	const [activePeriod, setActivePeriod] = useState(0);
+	const data: TimePeriod[] = historicalData.slice(0, MAX_PERIODS);
 
 	const currentPeriod = data[activePeriod];
 

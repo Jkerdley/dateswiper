@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+
+.controls {
+	grid-area: controls;
+	position: absolute;
+	left: 79px;
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	@media (max-width: $breakpoint-tablet) {
+		left: 19px;
+		bottom: 20px;
+	}
+}
+
+.controlsContainer {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	@media (max-width: $breakpoint-tablet) {
+		gap: 15px;
+	}
+	@media (max-width: $breakpoint-mobile) {
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+.slideCounter {
+	font-family: $font-main;
+	font-size: 14px;
+	color: $primary-color;
+	text-align: left;
+	margin-left: 1px;
+	margin-bottom: 20px;
+	@media (max-width: $breakpoint-mobile) {
+		margin-bottom: 10px;
+	}
+}
