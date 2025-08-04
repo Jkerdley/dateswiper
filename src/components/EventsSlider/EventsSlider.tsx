@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Navigation } from 'swiper/modules';
 import { Event } from '../../data/historicalData';
-import { EventCard } from './EventCard';
+import { EventCard } from '../EventCard/EventCard';
 
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -16,10 +16,11 @@ interface EventsSliderProps {
 }
 
 export const EventsSlider = ({ events }: EventsSliderProps) => {
-	const prevRef = useRef<HTMLButtonElement>(null);
-	const nextRef = useRef<HTMLButtonElement>(null);
 	const [currentEvents, setCurrentEvents] = useState(events);
 	const [isVisible, setIsVisible] = useState(true);
+
+	const prevRef = useRef<HTMLButtonElement>(null);
+	const nextRef = useRef<HTMLButtonElement>(null);
 
 	useEffect(() => {
 		if (events !== currentEvents) {
