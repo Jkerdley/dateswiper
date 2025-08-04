@@ -18,6 +18,9 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 	const nextRef = useRef<HTMLButtonElement>(null);
 	const [isVisible, setIsVisible] = useState(true);
 	const [currentEvents, setCurrentEvents] = useState(events);
+	const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+	const [isBeginning, setIsBeginning] = useState(true);
+	const [isEnd, setIsEnd] = useState(false);
 
 	useEffect(() => {
 		if (events !== currentEvents) {
@@ -32,6 +35,24 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 		}
 	}, [events, currentEvents]);
 
+	useEffect(() => {
+		if (swiperInstance) {
+			setIsBeginning(swiperInstance.isBeginning);
+			setIsEnd(swiperInstance.isEnd);
+		}
+	}, [swiperInstance, currentEvents]);
+
+	const handleSwiperInit = (swiper: SwiperType) => {
+		setSwiperInstance(swiper);
+		setIsBeginning(swiper.isBeginning);
+		setIsEnd(swiper.isEnd);
+	};
+
+	const handleSlideChange = (swiper: SwiperType) => {
+		setIsBeginning(swiper.isBeginning);
+		setIsEnd(swiper.isEnd);
+	};
+
 	return (
 		<section className={styles.sliderContainer}>
 			<div className={`${styles.sliderWrapper} ${isVisible ? styles.visible : ''}`}>
@@ -43,6 +64,10 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 						prevEl: prevRef.current,
 						nextEl: nextRef.current,
 					}}
+					onInit={handleSwiperInit}
+					onSlideChange={handleSlideChange}
+					onReachBeginning={() => setIsBeginning(true)}
+					onReachEnd={() => setIsEnd(true)}
 					onBeforeInit={(swiper: SwiperType) => {
 						const navigation = swiper.params.navigation;
 						if (navigation && typeof navigation === 'object') {
@@ -60,7 +85,11 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 					))}
 
 					<div className={styles.sliderControls}>
-						<button ref={prevRef} className={styles.controlButton}>
+						<button
+							ref={prevRef}
+							className={`${styles.controlButton} ${isBeginning ? styles.hidden : ''}`}
+							aria-hidden={isBeginning}
+						>
 							<svg
 								width="8"
 								height="12"
@@ -71,7 +100,11 @@ export const EventsSlider = ({ events }: EventsSliderProps) => {
 								<path d="M7 11L2 6L7 1" stroke="#3877EE" strokeWidth="2" />
 							</svg>
 						</button>
-						<button ref={nextRef} className={styles.controlButton}>
+						<button
+							ref={nextRef}
+							className={`${styles.controlButton} ${isEnd ? styles.hidden : ''}`}
+							aria-hidden={isEnd}
+						>
 							<svg
 								width="8"
 								height="12"
