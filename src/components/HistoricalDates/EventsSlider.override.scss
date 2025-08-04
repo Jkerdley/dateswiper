@@ -10,18 +10,30 @@
 .swiper-slide {
 	width: auto !important;
 	box-sizing: border-box !important;
+	transition: opacity 0.3s ease;
 }
 
 @media (max-width: 768px) {
 	.swiper-slide {
 		width: 100% !important;
 		max-width: 100% !important;
+		opacity: 0.5;
+	}
+
+	.swiper-slide-active {
+		opacity: 1 !important;
 	}
 }
-@media ((min-width: 320px) and (max-width: 1024px)) {
+
+@media ((min-width: 320px) and (max-width: 767px)) {
 	.swiper-slide {
 		width: 80% !important;
 		max-width: 100% !important;
+		opacity: 0.5;
+	}
+
+	.swiper-slide-active {
+		opacity: 1 !important;
 	}
 }
 
