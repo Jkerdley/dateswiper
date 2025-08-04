@@ -1,11 +1,13 @@
 {
 	"name": "dateswiper",
-	"version": "1.0.0",
+	"version": "1.2.0",
 	"main": "index.js",
+	"homepage": "https://Jkerdley.github.io/dateswiper",
 	"scripts": {
-		"start": "npx webpack serve --config webpack.config.js",
-		"build": "npx webpack --config webpack.config.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "webpack serve --mode=development",
+		"build": "webpack --mode=production",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"keywords": [],
 	"author": "",
@@ -22,19 +24,13 @@
 		"typescript": "^5.9.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.28.0",
-		"@babel/preset-env": "^7.28.0",
-		"@babel/preset-react": "^7.27.1",
-		"@babel/preset-typescript": "^7.27.1",
 		"@types/sass": "^1.43.1",
 		"clean-webpack-plugin": "^4.0.0",
 		"css-loader": "^7.1.2",
 		"css-minimizer-webpack-plugin": "^7.0.2",
+		"gh-pages": "^6.3.0",
 		"html-webpack-plugin": "^5.6.3",
 		"mini-css-extract-plugin": "^2.9.2",
-		"postcss": "^8.5.6",
-		"postcss-loader": "^8.1.1",
-		"postcss-preset-env": "^10.2.4",
 		"sass": "^1.89.2",
 		"sass-loader": "^16.0.5",
 		"style-loader": "^4.0.0",
