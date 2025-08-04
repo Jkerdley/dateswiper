@@ -6,12 +6,12 @@
 	max-width: 400px;
 	// background: #db14146b;
 	@media (max-width: $breakpoint-tablet) {
-		max-width: 300px;
+		// width: auto;
 		min-height: 150px;
 	}
 	@media (max-width: $breakpoint-mobile) {
+		width: 170px;
 		min-height: 80px;
-		max-width: 180px;
 	}
 }
 

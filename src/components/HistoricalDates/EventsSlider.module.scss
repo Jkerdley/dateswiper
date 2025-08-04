@@ -148,6 +148,7 @@
 	@media (max-width: $breakpoint-mobile) {
 		border-top: 1px solid #c7cdd9;
 		padding-top: 20px;
+		overflow: hidden;
 	}
 	&.visible {
 		opacity: 1;
