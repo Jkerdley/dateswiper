@@ -49,7 +49,12 @@ export const HistoricalDates = ({ data }: HistoricalDatesProps) => {
 						<YearCounter value={currentPeriod.endYear} color="#EF5DA8" />
 					</div>
 				</section>
-				<Controls onNext={handleNext} onPrev={handlePrev} />
+				<Controls
+					onNext={handleNext}
+					onPrev={handlePrev}
+					currentIndex={activePeriod}
+					totalCount={data.length}
+				/>
 				<div className={styles.dotsNavigationContainer}>
 					{points.map((_, index) => (
 						<TimelinePoint
